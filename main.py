@@ -2,7 +2,7 @@ from create_keycap import make_keycap
 import os
 
 ICON_BASE_DIR = "./svgs"
-CAP_STL_FILE = "./keycap_blank/basecapv2-Body.stl"
+CAP_STL_FILE = "./keycap_blank/basecapv3-Body.stl"
 
 
 for svg_file in os.listdir(ICON_BASE_DIR):

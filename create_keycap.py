@@ -55,8 +55,8 @@ def make_icon_extrusion(fp):
         scaleFactor = newX / oldX
         newY = oldY * scaleFactor
 
-    extrusion.dimensions = (newX, newY, 1)
-    extrusion.location = (6.5, 7, 9)
+    extrusion.dimensions = (newX, newY, 0.6)
+    extrusion.location = (6.5, 7, 8.40000001)
     return extrusion
 
 def make_keycap(stl_fp: str, svg_fb: str, target_fp: str):
@@ -68,9 +68,14 @@ def make_keycap(stl_fp: str, svg_fb: str, target_fp: str):
 
     # generate icon extrusion
     icon = make_icon_extrusion(svg_fb)
-
-    # import base keycap
     bpy.ops.import_mesh.stl(filepath=stl_fp)
+    cap = bpy.context.scene.objects["basecapv3-Body"]
+    print("OBJ %s" % cap)
+
+    mod = cap.modifiers.new("Boolean", type='BOOLEAN')
+    mod.operation = 'DIFFERENCE'
+    mod.object = icon
+    bpy.ops.object.modifier_apply(modifier=mod.name)
 
     # delete collections
     for collection in bpy.data.collections:
