@@ -46,7 +46,7 @@ def make_icon_extrusion(fp):
     bpy.ops.object.origin_set(type='ORIGIN_GEOMETRY', center='BOUNDS')
 
     oldX, oldY, oldZ = extrusion.dimensions
-    newY = 9
+    newY = 6
     scaleFactor = newY / oldY
     newX = oldX * scaleFactor
 
