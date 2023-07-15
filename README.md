@@ -1,3 +1,7 @@
+# Changes in this repo
+I changed the original script to move the icon into the keycap and modified the keycap. See here how to use the script and print:
+https://youtu.be/tzxYnoqEcDo?t=1829
+
 # 91 Icon Keycaps mostly based on fontawesome + generator script
 
 https://www.printables.com/model/395815-91-icon-keycaps
